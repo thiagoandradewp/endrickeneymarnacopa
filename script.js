@@ -1,5 +1,68 @@
 const targetDate = new Date("2026-05-18T17:00:00-03:00");
 
+// ==========================
+// ALTERE AQUI DEPOIS
+// ==========================
+
+// "pending"
+// "yes"
+// "no"
+
+const neymarStatus = "pending";
+const endrickStatus = "pending";
+
+// ==========================
+
+function setPlayerStatus(elementId, status){
+
+  const element = document.getElementById(elementId);
+
+  if(status === "yes"){
+
+    element.className = "status status-yes";
+    element.innerHTML = "✅ CONVOCADO";
+
+  }else if(status === "no"){
+
+    element.className = "status status-no";
+    element.innerHTML = "❌ NÃO CONVOCADO";
+
+  }else{
+
+    element.className = "status status-pending";
+    element.innerHTML = "⏳ AGUARDANDO";
+
+  }
+
+}
+
+function updateMainCounter(){
+
+  const now = new Date();
+
+  const diff = targetDate - now;
+
+  const mainCounter = document.getElementById("main-counter");
+
+  if(diff <= 0){
+
+    mainCounter.innerHTML = `
+      🇧🇷 A LISTA SAIU! 🇧🇷
+    `;
+
+    return;
+  }
+
+  const totalHours = Math.floor(
+    diff / (1000 * 60 * 60)
+  );
+
+  mainCounter.innerHTML = `
+    Faltam ${totalHours} horas
+  `;
+
+}
+
 function startCountdown(elementId){
 
   const element = document.getElementById(elementId);
@@ -10,12 +73,11 @@ function startCountdown(elementId){
 
     const diff = targetDate - now;
 
-    // QUANDO PASSAR DAS 17H
     if(diff <= 0){
 
       element.innerHTML = `
-        <div class="final-message">
-          🇧🇷 A LISTA SAIU! 🇧🇷
+        <div class="status status-pending">
+          🇧🇷 A LISTA SAIU!
         </div>
       `;
 
@@ -66,5 +128,12 @@ function startCountdown(elementId){
   setInterval(updateCountdown,1000);
 }
 
+updateMainCounter();
+
+setInterval(updateMainCounter,1000);
+
 startCountdown("countdown-neymar");
 startCountdown("countdown-endrick");
+
+setPlayerStatus("status-neymar", neymarStatus);
+setPlayerStatus("status-endrick", endrickStatus);
