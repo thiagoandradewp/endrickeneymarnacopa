@@ -8,7 +8,6 @@ body{
   font-family:'Montserrat',sans-serif;
   background:#050505;
   color:#fff;
-  min-height:100vh;
   overflow-x:hidden;
 }
 
@@ -28,7 +27,13 @@ body::before{
 .container{
   width:100%;
   min-height:100vh;
-  padding:50px 20px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  padding:40px 20px;
   position:relative;
 }
 
@@ -64,8 +69,8 @@ body::before{
 
 .hero{
   text-align:center;
-  max-width:900px;
-  margin:0 auto 60px;
+  max-width:800px;
+  margin-bottom:50px;
 }
 
 .tag{
@@ -80,30 +85,32 @@ body::before{
 }
 
 .hero h1{
-  font-size:clamp(2.2rem,6vw,5rem);
-  line-height:1.1;
+  font-size:clamp(2rem,5vw,3.5rem);
+  line-height:1.2;
   font-weight:900;
-  margin-bottom:20px;
+  margin-bottom:15px;
   text-transform:uppercase;
 }
 
 .hero p{
   color:#bcbcbc;
   font-size:1rem;
-  letter-spacing:1px;
+  line-height:1.6;
 }
 
 .players{
   display:flex;
   justify-content:center;
+  align-items:center;
   gap:40px;
   flex-wrap:wrap;
-  max-width:1300px;
-  margin:0 auto;
+
+  width:100%;
+  max-width:1200px;
 }
 
 .card{
-  width:380px;
+  width:360px;
   background:rgba(255,255,255,.05);
   border:1px solid rgba(255,255,255,.08);
   border-radius:28px;
@@ -120,7 +127,7 @@ body::before{
 
 .image-box{
   position:relative;
-  height:500px;
+  height:460px;
   overflow:hidden;
 }
 
@@ -147,12 +154,11 @@ body::before{
 
 .content h2{
   font-size:2rem;
-  margin-bottom:15px;
+  margin-bottom:12px;
 }
 
 .content p{
   color:#d3d3d3;
-  line-height:1.7;
   margin-bottom:25px;
 }
 
@@ -160,6 +166,7 @@ body::before{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:10px;
+  margin-bottom:20px;
 }
 
 .time-box{
@@ -172,7 +179,7 @@ body::before{
 
 .number{
   display:block;
-  font-size:1.5rem;
+  font-size:1.3rem;
   font-weight:800;
   color:#1db954;
 }
@@ -185,28 +192,31 @@ body::before{
   text-transform:uppercase;
 }
 
-.final-message{
+.status{
   width:100%;
+  padding:14px;
+  border-radius:14px;
   text-align:center;
-  padding:20px;
-  font-size:1.5rem;
   font-weight:800;
-  color:#1db954;
-  animation:pulseMessage 1s infinite alternate;
+  letter-spacing:1px;
 }
 
-@keyframes pulseMessage{
+.status-pending{
+  background:#ffffff10;
+  border:1px solid #ffffff20;
+  color:#ccc;
+}
 
-  from{
-    transform:scale(1);
-    opacity:.7;
-  }
+.status-yes{
+  background:#1db95420;
+  border:1px solid #1db954;
+  color:#1db954;
+}
 
-  to{
-    transform:scale(1.05);
-    opacity:1;
-  }
-
+.status-no{
+  background:#ff3b3020;
+  border:1px solid #ff3b30;
+  color:#ff3b30;
 }
 
 .footer{
@@ -234,7 +244,6 @@ body::before{
 
   .players{
     flex-direction:column;
-    align-items:center;
   }
 
   .card{
