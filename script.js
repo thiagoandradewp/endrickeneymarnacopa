@@ -10,18 +10,21 @@ function startCountdown(elementId){
 
     const diff = targetDate - now;
 
+    // QUANDO PASSAR DAS 17H
     if(diff <= 0){
 
       element.innerHTML = `
         <div class="final-message">
-          🇧🇷 CONVOCADOS? 🇧🇷
+          🇧🇷 A LISTA SAIU! 🇧🇷
         </div>
       `;
 
       return;
     }
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const days = Math.floor(
+      diff / (1000 * 60 * 60 * 24)
+    );
 
     const hours = Math.floor(
       (diff / (1000 * 60 * 60)) % 24
