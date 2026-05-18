@@ -8,8 +8,8 @@ const targetDate = new Date("2026-05-18T17:00:00-03:00");
 // "yes"
 // "no"
 
-const neymarStatus = "pending";
-const endrickStatus = "pending";
+const neymarStatus = "yes";
+const endrickStatus = "yes";
 
 // ==========================
 
