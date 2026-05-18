@@ -7,13 +7,11 @@
 
   <title>Convocação Neymar & Endrick</title>
 
-  <!-- Fonte -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -30,14 +28,13 @@
         🇧🇷 SELEÇÃO BRASILEIRA
       </span>
 
-      <h1>
-        Faltam tantas horas<br>
-        para a convocação de<br>
-        Neymar & Endrick
+      <h1 id="main-counter">
+        Carregando...
       </h1>
 
       <p>
-        Convocação oficial da Seleção Brasileira • 18/05/2026 às 17h
+        para a convocação de<br>
+        Neymar & Endrick
       </p>
 
     </header>
@@ -63,10 +60,15 @@
           <h2>Neymar Jr.</h2>
 
           <p>
-            A possível última Copa do camisa 10. Experiência, talento e a esperança de finalmente trazer o HEXA para o Brasil.
+            A possível última Copa do camisa 10.
           </p>
 
           <div class="countdown" id="countdown-neymar"></div>
+
+          <!-- STATUS -->
+          <div class="status status-pending" id="status-neymar">
+            ⏳ AGUARDANDO
+          </div>
 
         </div>
 
@@ -91,10 +93,15 @@
           <h2>Endrick</h2>
 
           <p>
-            A nova geração chegou. Velocidade, personalidade e a promessa de um novo ciclo vencedor para a Seleção Brasileira.
+            A nova geração chegou para liderar o futuro.
           </p>
 
           <div class="countdown" id="countdown-endrick"></div>
+
+          <!-- STATUS -->
+          <div class="status status-pending" id="status-endrick">
+            ⏳ AGUARDANDO
+          </div>
 
         </div>
 
@@ -119,7 +126,6 @@
 
   </div>
 
-  <!-- JS -->
   <script src="script.js"></script>
 
 </body>
